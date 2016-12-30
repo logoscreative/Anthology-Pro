@@ -46,7 +46,8 @@
 /* Homepage Widgets
 ---------------------------------------------------------------------------------------------------- */
 
-.home .widget-title {
+.home .widget-title,
+.footer-widgets .widget-title {
   @extend .entry-title;
   text-align: center;
 }

@@ -40,3 +40,6 @@ include_once( get_stylesheet_directory() . '/lib/content-relationships.php' );
 
 // Podcasting Capabilities
 include_once( get_stylesheet_directory() . '/lib/podcasting.php' );
+
+// Edit Single
+include_once( get_stylesheet_directory() . '/lib/single.php' );

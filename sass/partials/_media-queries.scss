@@ -218,15 +218,10 @@
 	.wrap {
 		margin: 0 auto;
 	}
-	.site-inner,
 	.footer-widgets {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-    .home .site-inner {
-        padding-left: 0;
-        padding-right: 0;
-    }
 	.mobile-first-landing .site-container {
 		max-width: 800px;
 	}
@@ -236,25 +231,16 @@
 	.full-width-content .content {
 		width: 100%;
 	}
-	.sidebar,
-	.footer-widgets-3 {
+	.sidebar {
 		width: 31.623931623931625%;
-	}
-	.footer-widgets-1,
-	.footer-widgets-2 {
-		width: 31.623931623931625%;
-		margin-right: 2.564102564102564%;
 	}
 	.content,
-	.sidebar-content .sidebar,
-	.footer-widgets-1,
-	.footer-widgets-2 {
+	.sidebar-content .sidebar {
 		float: left;
 	}
 	.header-widget-area,
 	.sidebar,
-	.sidebar-content .content,
-	.footer-widgets-3 {
+	.sidebar-content .content {
 		float: right;
 	}
 	.desktop .site-header {

@@ -33,7 +33,7 @@
 
 .single .entry {
 	border-bottom: 0;
-	margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .entry-content {
@@ -187,4 +187,23 @@ p {
 
 .comment-list li {
 	list-style-type: none;
+}
+
+/* Special Post Types
+--------------------------------------------- */
+
+.single-collection,
+.single-element {
+  .content {
+    max-width: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .entry-header,
+  .entry-content,
+  .entry-footer {
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
 }

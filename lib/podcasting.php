@@ -1,7 +1,7 @@
 <?php
 
 // oEmbed URLs
-add_action( 'genesis_entry_content', 'anthology_pro_embed_custom_media', 9 );
+add_action( 'genesis_entry_content', 'anthology_pro_embed_custom_media', 11 );
 function anthology_pro_embed_custom_media() {
 
 	if ( is_singular() ) {

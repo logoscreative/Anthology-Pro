@@ -9,3 +9,6 @@ function anthology_pro_remove_site_container_class( $attributes, $context ) {
 	return $attributes;
 
 }
+
+// Remove post info
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
