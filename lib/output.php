@@ -21,10 +21,23 @@ function anthology_pro_css() {
 
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 
-	$color_link = get_theme_mod( 'anthology_pro_link_color', anthology_pro_customizer_get_default_link_color() );
-	$color_accent = get_theme_mod( 'anthology_pro_accent_color', anthology_pro_customizer_get_default_accent_color() );
+	$background = get_theme_mod( 'anthology-pro-image' ) ? get_theme_mod( 'anthology-pro-image' ) : sprintf( '%s/images/bg-1.jpg', get_stylesheet_directory_uri() );
 
 	$css = '';
+
+	if ( is_front_page() ) {
+		$css .= ( ! empty( $background ) ) ? sprintf( '
+		.front-page-1 {
+			background-image: url(%s);
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		', $background ) : '';
+	}
+
+	$color_link = get_theme_mod( 'anthology_pro_link_color', anthology_pro_customizer_get_default_link_color() );
+	$color_accent = get_theme_mod( 'anthology_pro_accent_color', anthology_pro_customizer_get_default_accent_color() );
 
 	//* Calculate Color Contrast
 	function anthology_pro_color_contrast( $color ) {

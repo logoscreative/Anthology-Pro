@@ -268,7 +268,9 @@ template {
 .site-footer:before,
 .site-header:before,
 .site-inner:before,
-.wrap:before {
+.wrap:before,
+.front-page-1 .widget-area:before,
+.front-page-2 .widget-area:before {
   content: " ";
   display: table; }
 
@@ -284,7 +286,9 @@ template {
 .site-footer:after,
 .site-header:after,
 .site-inner:after,
-.wrap:after {
+.wrap:after,
+.front-page-1 .widget-area:after,
+.front-page-2 .widget-area:after {
   clear: both;
   content: " ";
   display: table; }
@@ -294,11 +298,11 @@ template {
 /* Typographical Elements
 --------------------------------------------- */
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
   color: #333;
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-weight: 400;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 300;
   line-height: 1.625;
   margin: 0;
   -webkit-font-smoothing: antialiased; }
@@ -343,7 +347,7 @@ li {
 
 b,
 strong {
-  font-weight: 700; }
+  font-weight: 800; }
 
 blockquote,
 cite,
@@ -366,8 +370,8 @@ blockquote {
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-weight: 700;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 800;
   line-height: 1.2;
   margin: 0 0 20px; }
 
@@ -461,7 +465,7 @@ textarea {
   border-radius: 3px;
   color: #333;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   padding: 16px;
   width: 100%;
   -webkit-font-smoothing: antialiased; }
@@ -480,7 +484,7 @@ input[type="checkbox"], input[type="image"], input[type="radio"] {
 ::-moz-placeholder,
 ::-webkit-input-placeholder {
   color: #333;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased; }
 
 ::-moz-placeholder {
@@ -489,27 +493,35 @@ input[type="checkbox"], input[type="image"], input[type="radio"] {
 button,
 .button,
 .entry a.button {
-  background-color: #333;
+  background-color: #8E793E;
   color: #fff;
   border: 0;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   padding: 16px 24px;
   text-decoration: none;
+  text-transform: uppercase;
   white-space: normal;
   width: auto; }
+  button.button-alt,
+  .button.button-alt,
+  .entry a.button.button-alt {
+    background-color: transparent;
+    border: 5px solid #fff;
+    color: #fff;
+    padding: 11px 14px; }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
-  background-color: #333;
+  background-color: #8E793E;
   color: #fff;
   border: 0;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   padding: 16px 24px;
   text-decoration: none;
@@ -574,7 +586,7 @@ td {
   padding: 6px 0; }
 
 th {
-  font-weight: 400; }
+  font-weight: 300; }
 
 /* Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -586,9 +598,13 @@ th {
 
 .site-inner {
   clear: both;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 30px; }
+  padding-top: 130px; }
+
+/* Homepage
+--------------------------------------------- */
+.front-page-1,
+.front-page-2 {
+  padding: 50px; }
 
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
@@ -621,12 +637,12 @@ th {
 
 .archive-description,
 .author-box {
-  border-bottom: 5px solid #f5f5f5;
+  border-bottom: 5px solid #fff;
   margin-bottom: 60px;
   padding-bottom: 30px; }
 
 .single .author-box {
-  border-top: 5px solid #f5f5f5;
+  border-top: 5px solid #fff;
   padding-top: 30px; }
 
 .author-box-title {
@@ -664,15 +680,16 @@ th {
 .archive-title {
   font-size: 20px; }
 
-.entry-title {
-  font-size: 30px; }
-  .entry-title a {
+.entry-title, .home .widget-title {
+  font-size: 30px;
+  text-transform: uppercase; }
+  .entry-title a, .home .widget-title a {
     color: #333; }
 
 .sidebar .widget-title a {
   color: #333; }
 
-.entry-title a:hover {
+.entry-title a:hover, .home .widget-title a:hover {
   color: #000; }
 
 .widget-title {
@@ -722,7 +739,7 @@ img.alignright,
 
 .wp-caption-text {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center; }
 
 .entry-content p.wp-caption-text {
@@ -753,11 +770,21 @@ img.alignright,
   border-bottom: 2px solid #f5f5f5;
   margin-bottom: 20px;
   padding: 0 0 24px; }
-.featured-content .entry-title {
+.featured-content .entry-title, .featured-content .home .widget-title, .home .featured-content .widget-title {
   font-size: 20px; }
 
 .footer-widgets .entry {
   border-bottom: 1px dotted #666; }
+
+/* Homepage Widgets
+---------------------------------------------------------------------------------------------------- */
+.home .widget-title {
+  text-align: center; }
+
+.home .front-page-1 .widget {
+  color: #fff; }
+  .home .front-page-1 .widget h2, .home .front-page-1 .widget h3, .home .front-page-1 .widget h4, .home .front-page-1 .widget h5, .home .front-page-1 .widget h6 {
+    color: #fff; }
 
 /* Plugins
 ---------------------------------------------------------------------------------------------------- */
@@ -796,10 +823,10 @@ img.alignright,
   margin-bottom: 20px; }
 .content a.count, .content a.share {
   border: none;
-  font-weight: 400; }
+  font-weight: 300; }
   .content a.count:hover, .content a.share:hover {
     border: none;
-    font-weight: 400; }
+    font-weight: 300; }
 .content .share-filled .share {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -833,7 +860,7 @@ img.alignright,
 .content .share-filled .stumbleupon:hover .count,
 .content .share-filled .twitter .share,
 .content .share-filled .twitter:hover .count {
-  background: #333 !important; }
+  background: #8E793E !important; }
 .content .share-filled .facebook:hover .count,
 .content .share-filled .googlePlus:hover .count,
 .content .share-filled .linkedin:hover .count,
@@ -902,9 +929,13 @@ img.alignright,
 .site-header {
   background-color: #fff;
   text-align: center;
-  border-bottom: 1px solid rgba(26, 46, 90, 0.8); }
-  .site-header .wrap {
-    padding: 20px 0; }
+  border-bottom: 1px solid rgba(26, 46, 90, 0.8);
+  width: 100%;
+  position: fixed; }
+  .site-header .wrap, .site-header .front-page-1 .widget-area, .front-page-1 .site-header .widget-area,
+  .site-header .front-page-2 .widget-area,
+  .front-page-2 .site-header .widget-area {
+    padding: 20px; }
 
 /* Site Title and Description
 --------------------------------------------- */
@@ -924,14 +955,11 @@ img.alignright,
   padding-left: 15px;
   width: auto; }
 .header-image .site-title > a {
-  background: url(images/logo@2x.png) no-repeat !important;
-  background: url(images/logo.svg), none !important;
   background-position: center left !important;
-  background-size: 130px 56px !important;
+  background-size: 100% auto !important;
   background-repeat: no-repeat !important;
   float: left;
-  min-height: 56px;
-  width: 130px; }
+  min-height: 56px; }
 .header-image .site-description,
 .header-image .site-title {
   display: block;
@@ -945,7 +973,7 @@ img.alignright,
 
 .site-description {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 10px;
   line-height: 1.2; }
 
@@ -977,7 +1005,8 @@ img.alignright,
   width: 100%; }
   .mobile .genesis-nav-menu .menu-item {
     display: inline-block;
-    text-align: left; }
+    text-align: left;
+    text-transform: uppercase; }
     .mobile .genesis-nav-menu .menu-item a {
       color: #333;
       display: block;
@@ -1072,7 +1101,9 @@ img.alignright,
     display: block; }
   .mobile nav.pagination {
     display: block; }
-  .mobile nav .wrap {
+  .mobile nav .wrap, .mobile nav .front-page-1 .widget-area, .front-page-1 .mobile nav .widget-area,
+  .mobile nav .front-page-2 .widget-area,
+  .front-page-2 .mobile nav .widget-area {
     padding: 0; }
   .mobile nav li.menu-item.button a {
     color: #333; }
@@ -1149,7 +1180,7 @@ button.sub-menu-toggle:before {
     position: relative;
     text-align: left; }
     .mobile .genesis-nav-menu .menu-item.button {
-      background-color: #333;
+      background-color: #8E793E;
       margin-left: 10px;
       margin-right: 10px; }
     .mobile .genesis-nav-menu .menu-item:hover {
@@ -1229,7 +1260,7 @@ button.sub-menu-toggle:before {
     background-color: transparent; }
     .entry a:hover {
       color: #333;
-      background-color: #f5f5f5; }
+      background-color: #fff; }
 
 .page.page-template-page_blog-php .entry {
   border-bottom: 5px solid #f5f5f5;
@@ -1289,7 +1320,7 @@ p.entry-meta {
 .archive-pagination li {
   display: inline; }
   .archive-pagination li a {
-    background-color: #333;
+    background-color: #8E793E;
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -1391,7 +1422,7 @@ p.form-submit {
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  background-color: #fff;
+  background-color: #e6e6e6;
   padding: 40px 15px;
   text-align: center; }
   .site-footer p {
@@ -1409,7 +1440,8 @@ p.form-submit {
   .site-inner {
     border-top: none; }
 
-  .site-header > .wrap {
+  .site-header > .wrap, .front-page-1 .site-header > .widget-area,
+  .front-page-2 .site-header > .widget-area {
     position: relative; }
 
   	/* ## Accessible Menu
@@ -1433,7 +1465,6 @@ p.form-submit {
     margin-top: 0;
     width: 100%; }
   .desktop .genesis-nav-menu {
-    background-color: #fff;
     box-shadow: none;
     text-align: left;
     font-size: 14px;
@@ -1522,12 +1553,12 @@ p.form-submit {
         padding-top: 20px; }
 
   .genesis-nav-menu .sub-menu {
-    background-color: #f5f5f5;
+    background-color: #fff;
     left: -9999px;
     opacity: 0; }
     .genesis-nav-menu .sub-menu a {
       background-color: #fff;
-      border: 1px solid #f5f5f5;
+      border: 1px solid #fff;
       border-top: 0;
       border-left: 0;
       z-index: 9999; }
@@ -1535,7 +1566,7 @@ p.form-submit {
       margin: -55px 0 0 199px;
       padding-left: 0; }
   .genesis-nav-menu li.highlight a {
-    background-color: #f5f5f5;
+    background-color: #fff;
     border-radius: 3px;
     color: #fff;
     font-weight: 400;
@@ -1582,13 +1613,19 @@ p.form-submit {
     display: none; } }
 @media only screen and (min-width: 768px) {
   .site-inner,
-  .wrap {
+  .wrap,
+  .front-page-1 .widget-area,
+  .front-page-2 .widget-area {
     margin: 0 auto; }
 
   .site-inner,
   .footer-widgets {
     padding-left: 15px;
     padding-right: 15px; }
+
+  .home .site-inner {
+    padding-left: 0;
+    padding-right: 0; }
 
   .mobile-first-landing .site-container {
     max-width: 800px; }
@@ -1637,10 +1674,7 @@ p.form-submit {
   .desktop.header-image .title-area {
     width: 180px; }
   .desktop.header-image .site-title > a {
-    background: url(images/wide-logo@2x.png) no-repeat !important;
-    background: url(images/wide-logo.svg), none !important;
     background-position: center left !important;
-    background-size: 384px 56px !important;
     background-repeat: no-repeat !important;
     float: left;
     min-height: 56px;
@@ -1710,7 +1744,9 @@ p.form-submit {
     margin-top: 40px;
     max-width: 1000px; }
 
-  .desktop .site-header > .wrap {
+  .desktop .site-header > .wrap, .desktop .front-page-1 .site-header > .widget-area, .front-page-1 .desktop .site-header > .widget-area,
+  .desktop .front-page-2 .site-header > .widget-area,
+  .front-page-2 .desktop .site-header > .widget-area {
     padding: 20px 0; }
   .desktop .site-header nav.nav-header {
     width: 550px;
@@ -1723,12 +1759,13 @@ p.form-submit {
 
   .site-header
   .site-inner,
-  .wrap {
-    max-width: 960px; } }
-@media only screen and (min-width: 1200px) {
-  .site-container {
-    max-width: 1200px; }
+  .content,
+  .wrap,
+  .front-page-1 .widget-area,
+  .front-page-2 .widget-area {
+    max-width: 960px;
+    float: none;
+    margin: 0 auto; }
 
-  .site-inner,
-  .wrap {
-    max-width: 1120px; } }
+  .home .content {
+    max-width: none; } }

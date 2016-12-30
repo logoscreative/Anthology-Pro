@@ -14,17 +14,20 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 // Set Localization (do not remove)
 load_child_theme_textdomain( 'anthology-pro', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'anthology-pro' ) );
 
+// Enqueue scripts and styles
+include_once( get_stylesheet_directory() . '/lib/enqueue.php' );
+
 // Add Image upload and Color select to WordPress Theme Customizer
 require_once( get_stylesheet_directory() . '/lib/customize.php' );
 
 // Include Customizer CSS
 include_once( get_stylesheet_directory() . '/lib/output.php' );
 
-// Enqueue scripts and styles
-include_once( get_stylesheet_directory() . '/lib/enqueue.php' );
-
 // Markup and Support
 include_once( get_stylesheet_directory() . '/lib/markup-support.php' );
+
+// Alter Default Genesis Structure
+include_once( get_stylesheet_directory() . '/lib/alter-structure.php' );
 
 // Markup and Support
 include_once( get_stylesheet_directory() . '/lib/nav.php' );

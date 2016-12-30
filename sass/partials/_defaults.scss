@@ -238,8 +238,15 @@ button,
 	letter-spacing: 1px;
 	padding: 16px 24px;
 	text-decoration: none;
+    text-transform: uppercase;
 	white-space: normal;
 	width: auto;
+    &.button-alt {
+        background-color: transparent;
+        border: 5px solid $color-light-link;
+        color: $color-light-link;
+        padding: 11px 14px;
+    }
 }
 input {
 	&[type="button"],

@@ -2,7 +2,7 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: $color-container-bg;
+	background-color: lighten($color-dark-bg, 70%);
 	padding: 40px 15px;
 	text-align: center;
 	p {

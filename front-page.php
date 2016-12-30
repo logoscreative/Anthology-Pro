@@ -42,8 +42,8 @@ function anthology_pro_front_page_widgets() {
 	echo '<h2 class="screen-reader-text">' . __( 'Main Content', 'anthology_pro_' ) . '</h2>';
 
 	genesis_widget_area( 'front-page-1', array(
-		'before' => '<div id="front-page-1" class="front-page-1"><div class="image-section widget-area fadeup-effect"><div class="wrap">',
-		'after'  => '</div></div></div>',
+		'before' => '<div id="front-page-1" class="front-page-1"><div class="image-section widget-area fadeup-effect">',
+		'after'  => '</div></div>',
 	) );
 
 	genesis_widget_area( 'front-page-2', array(

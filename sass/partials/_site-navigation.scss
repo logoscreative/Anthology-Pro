@@ -27,6 +27,7 @@
 	.menu-item {
 		display: inline-block;
 		text-align: left;
+        text-transform: uppercase;
 		a {
 			color: $color-menu-link;
 			display: block;

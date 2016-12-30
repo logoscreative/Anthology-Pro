@@ -53,3 +53,10 @@ function anthology_pro_theme_setting_defaults() {
 	update_option( 'posts_per_page', 6 );
 
 }
+
+// Go ahead and set a better default
+add_filter( 'genesis_footer_creds_text', 'anthology_pro_footer_creds_filter' );
+function anthology_pro_footer_creds_filter( $creds ) {
+	$creds = '[footer_copyright] ' . get_bloginfo('name');
+	return $creds;
+}

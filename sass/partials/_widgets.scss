@@ -42,3 +42,18 @@
 .footer-widgets .entry {
 	border-bottom: 1px dotted #666;
 }
+
+/* Homepage Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.home .widget-title {
+  @extend .entry-title;
+  text-align: center;
+}
+
+.home .front-page-1 .widget {
+  color: $color-light-on-dark;
+  & h2, h3, h4, h5, h6 {
+    color: $color-light-on-dark;
+  }
+}

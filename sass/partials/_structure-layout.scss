@@ -11,7 +11,17 @@
 
 .site-inner {
 	clear: both;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 30px;
+	padding-top: 130px;
 }
+
+/* Homepage
+--------------------------------------------- */
+
+.front-page-1,
+.front-page-2 {
+  padding: 50px;
+  .widget-area {
+    @extend .wrap;
+  }
+}
+

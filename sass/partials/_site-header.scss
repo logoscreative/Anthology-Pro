@@ -5,8 +5,10 @@
 	background-color: $color-container-bg;
 	text-align: center;
 	border-bottom: 1px solid $color-button-border;
+    width: 100%;
+    position: fixed;
 	.wrap {
-		padding: 20px 0;
+		padding: 20px;
 	}
 }
 
@@ -34,14 +36,11 @@
 		width: auto;
 	}
 	.site-title > a {
-		background: url(images/logo@2x.png) no-repeat !important;
-		background: url(images/logo.svg), none !important;
 		background-position: center left !important;
-		background-size: 130px 56px !important;
+		background-size: 100% auto !important;
 		background-repeat: no-repeat !important;
 		float: left;
 		min-height: 56px;
-		width: 130px;
 	}
 	.site-description,
 	.site-title {
