@@ -27,6 +27,7 @@
 
 .dark-cover {
   background: rgba(0,0,0,0.6);
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
   color: $color-light-on-dark;
   padding: 50px;
   .entry-title {
@@ -36,6 +37,7 @@
 
 .light-cover {
   background: rgba(255,255,255,0.8);
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6));
   padding: 50px;
 }
 
@@ -61,6 +63,7 @@
     }
     .related-content-item-wrap {
       background: rgba(255,255,255,0.8);
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6));
       padding: 20px;
     }
     .related-content-item-title {

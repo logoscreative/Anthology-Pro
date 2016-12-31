@@ -608,6 +608,7 @@ th {
 
 .dark-cover {
   background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
   color: #fff;
   padding: 50px; }
   .dark-cover .entry-title, .dark-cover .related-content-wrap.wrap .related-content-item .related-content-item-title, .related-content-wrap.wrap .related-content-item .dark-cover .related-content-item-title, .dark-cover .front-page-2 .related-content-wrap.widget-area .related-content-item .related-content-item-title, .front-page-2 .related-content-wrap.widget-area .related-content-item .dark-cover .related-content-item-title,
@@ -619,6 +620,7 @@ th {
 
 .light-cover {
   background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
   padding: 50px; }
 
 /* Related Content
@@ -645,6 +647,7 @@ th {
     .related-content-wrap.wrap .related-content-item .related-content-item-wrap, .front-page-2 .related-content-wrap.widget-area .related-content-item .related-content-item-wrap,
     .footer-widgets .related-content-wrap.widget-area .related-content-item .related-content-item-wrap {
       background: rgba(255, 255, 255, 0.8);
+      background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
       padding: 20px; }
 
 /* Common Classes
